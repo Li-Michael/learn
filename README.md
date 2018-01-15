@@ -1,2 +1,1 @@
-# learn
-learn  algorithm/ DNA sequencing/ python
+learn python / algorithm / DNA sequencing
