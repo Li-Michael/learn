@@ -1,0 +1,279 @@
+1
+00:00:00,690 --> 00:00:07,690
+Hello, I am going to present very briefly
+how the algorithm random forest works
+
+2
+00:00:08,460 --> 00:00:15,460
+Well, we start with a rationale of the term
+and we say that the combination of learning
+
+3
+00:00:17,740 --> 00:00:21,720
+models
+increases the classification accuracy
+
+4
+00:00:21,720 --> 00:00:28,070
+When we use different learning models we can
+increase the accuracy of classification, which
+
+5
+00:00:28,070 --> 00:00:33,159
+is the main idea of a technique that is called
+bagging
+
+6
+00:00:33,159 --> 00:00:40,159
+And bagging, the main idea is to average noisy
+and unbiased models in order to create another
+
+7
+00:00:40,829 --> 00:00:47,829
+model with a lower variance, in terms of classification
+Now, we describe the random forest, a very
+
+8
+00:00:49,690 --> 00:00:54,909
+brief definition
+Random forest algorithm works as a large collection
+
+9
+00:00:54,909 --> 00:01:01,329
+of the correlated decision trees
+Well, the name forest is because we use a
+
+10
+00:01:01,329 --> 00:01:08,290
+lot of decision trees
+But this algorithm of random forest creates
+
+11
+00:01:08,290 --> 00:01:14,080
+a lot of decision trees and use them to make
+a classification
+
+12
+00:01:14,080 --> 00:01:19,730
+That is why it is a technique based on the
+bagging technique, that we presented before
+
+13
+00:01:19,730 --> 00:01:26,030
+So, how the random forest algorithm works?
+Lets see
+
+14
+00:01:26,030 --> 00:01:33,030
+We show here in this example a matrix S
+Suppose this matrix S is a matrix of training
+
+15
+00:01:35,090 --> 00:01:40,450
+samples that we will submit to the algorithm
+to create a classification model
+
+16
+00:01:40,450 --> 00:01:47,450
+In this case f A 1, f B 1, f C 1, these are
+a lot of features, for example the f A 1 is
+
+17
+00:01:49,000 --> 00:01:54,720
+the feature A of the first sample
+And we continue in all the samples up to N
+
+18
+00:01:54,720 --> 00:02:00,150
+So, the f B N is the feature B of the Nth
+sample
+
+19
+00:02:00,150 --> 00:02:05,780
+And also we have in the last column here the
+C 1 and C N, which means that we have lots
+
+20
+00:02:05,780 --> 00:02:12,780
+of features and we have a training class
+So the aim is to create a random forest to
+
+21
+00:02:13,440 --> 00:02:19,490
+classify this sample set
+How the algorithm works, in detail?
+
+22
+00:02:19,490 --> 00:02:26,490
+Well, we get this sample set and from this
+sample set we create a lot of subsets with
+
+23
+00:02:27,920 --> 00:02:32,760
+random values
+Which means that, for example, in the first
+
+24
+00:02:32,760 --> 00:02:39,760
+subset we used the line number 12, the line
+number 15 and also the line number 35
+
+25
+00:02:41,650 --> 00:02:48,240
+And also some other random elements here
+So we get a subset from that previously shown
+
+26
+00:02:48,240 --> 00:02:54,540
+sample set and from this element we create
+a decision tree number 1
+
+27
+00:02:54,540 --> 00:03:01,280
+Then we make another random subset with different
+values, we can see that we have the sample
+
+28
+00:03:01,280 --> 00:03:05,630
+number 2, sample number 6 and the sample number
+20 and many others
+
+29
+00:03:05,630 --> 00:03:10,980
+With these values we can create a decision
+tree number 2
+
+30
+00:03:10,980 --> 00:03:16,959
+And from this M sample we can create the decision
+tree number M
+
+31
+00:03:16,959 --> 00:03:23,950
+So, this is why we call it a forest
+Because we have a lot of decision trees
+
+32
+00:03:23,950 --> 00:03:27,790
+And after we created all of these decision
+trees
+
+33
+00:03:27,790 --> 00:03:34,790
+I am going to repeat that used different samples
+from each of the sample set here, we created
+
+34
+00:03:35,209 --> 00:03:39,709
+a subset with random samples
+Then with all these decision trees we have
+
+35
+00:03:39,709 --> 00:03:46,130
+different variations of the main classification
+Then we are going to use all of this decision
+
+36
+00:03:46,130 --> 00:03:53,130
+trees to create a ranking of classifiers
+So, in the next example here we show how we
+
+37
+00:03:54,069 --> 00:04:00,700
+can make the class prediction
+I showed 4 examples of decision trees here
+
+38
+00:04:00,700 --> 00:04:05,270
+only to see how the class prediction will
+work
+
+39
+00:04:05,270 --> 00:04:11,270
+In this case we have 4 decision trees, our
+forest is composed by 4 trees
+
+40
+00:04:11,270 --> 00:04:18,190
+If we have a new element to classify we are
+going to ask for the first tree what is the
+
+41
+00:04:18,190 --> 00:04:22,910
+prediction
+Suppose the first tree said that the classification
+
+42
+00:04:22,910 --> 00:04:29,570
+of this sample is class 1, and then we called
+to the second decision tree and it says that
+
+43
+00:04:29,570 --> 00:04:34,800
+is class number 3 and then the other says
+that it is class number 1 and the other says
+
+44
+00:04:34,800 --> 00:04:40,940
+is class number 2
+So we have 4 decision trees, independent decision
+
+45
+00:04:40,940 --> 00:04:46,150
+trees here which were created using subsamples
+of the entire sample set
+
+46
+00:04:46,150 --> 00:04:49,930
+And now we can account for the number of votes
+for each class
+
+47
+00:04:49,930 --> 00:04:55,900
+It is obvious that we have 1 vote here and
+another vote here for class 1, so we have
+
+48
+00:04:55,900 --> 00:05:01,750
+2 votes for class 1 and a single vote for
+class 2 and a single vote for class 3
+
+49
+00:05:01,750 --> 00:05:08,750
+So the result is going to be class 1
+This random forest classified all the elements
+
+50
+00:05:09,870 --> 00:05:13,940
+and the class 1 was the selected class of
+this classification
+
+51
+00:05:13,940 --> 00:05:19,530
+So it is a very simple process, the difficult
+here is to create a lot of decision trees
+
+52
+00:05:19,530 --> 00:05:25,570
+but the creation of decision tree belongs
+to the algorithm of decision trees
+
+53
+00:05:25,570 --> 00:05:31,419
+So, this is the idea behind the random forest
+algorithm
+
+54
+00:05:31,419 --> 00:05:36,040
+Here I provide some references
+The main reference is this one, Random Forests,
+
+55
+00:05:36,040 --> 00:05:42,100
+which was published in 2001
+And also I used this book to create this presentation
+
+56
+00:05:42,100 --> 00:05:45,389
+So this is how Random Forest algorithm works
+

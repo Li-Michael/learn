@@ -1,0 +1,365 @@
+1
+00:00:02,840 --> 00:00:07,040
+If you’ve been ignoring neural nets cuz you think they’re too hard to understand
+
+2
+00:00:07,040 --> 00:00:11,040
+or you think you don’t need them…boy do I have a treat for you!
+
+3
+00:00:11,040 --> 00:00:16,080
+In this video you’ll learn about neural nets without any of the math or code –
+
+4
+00:00:16,080 --> 00:00:19,200
+just an intro to what they are and how they work.
+
+5
+00:00:19,200 --> 00:00:23,280
+My hope is that you’ll get an idea for why they’re such an important tool.
+
+6
+00:00:23,280 --> 00:00:24,560
+Let’s get started.
+
+7
+00:00:24,560 --> 00:00:25,920
+
+
+8
+00:00:25,920 --> 00:00:30,360
+The first thing you need to know is that deep learning is about neural networks.
+
+9
+00:00:30,360 --> 00:00:34,360
+The structure of a neural network is like any other kind of network;
+
+10
+00:00:34,360 --> 00:00:38,160
+there is an interconnected web of nodes, which are called neurons,
+
+11
+00:00:38,160 --> 00:00:40,560
+and the edges that join them together.
+
+12
+00:00:40,560 --> 00:00:44,500
+A neural network's main function is to receive a set of inputs,
+
+13
+00:00:44,500 --> 00:00:47,580
+perform progressively complex calculations,
+
+14
+00:00:47,580 --> 00:00:50,380
+and then use the output to solve a problem.
+
+15
+00:00:50,380 --> 00:00:53,800
+Neural networks are used for lots of different applications,
+
+16
+00:00:53,800 --> 00:00:57,140
+but in this series we will focus on classification.
+
+17
+00:00:57,140 --> 00:01:01,520
+If you wanna learn about neural nets in a bit more detail, including the math,
+
+18
+00:01:01,520 --> 00:01:08,360
+my two favourite resources are Michael Nielsen's book, and Andrew Ng's class.
+
+19
+00:01:08,360 --> 00:01:15,100
+Before we talk more about neural networks, I’m gonna give you a quick overview of the problem of classification.
+
+20
+00:01:15,100 --> 00:01:19,000
+Classification is the process of categorizing a group of objects,
+
+21
+00:01:19,000 --> 00:01:23,160
+while only using some basic data features that describe them.
+
+22
+00:01:23,160 --> 00:01:26,040
+There are lots of classifiers available today -
+
+23
+00:01:26,040 --> 00:01:32,340
+like Logistic Regression, Support Vector Machines, Naive Bayes, and of course, neural networks.
+
+24
+00:01:32,340 --> 00:01:38,240
+The firing of a classifier, or activation as its commonly called, produces a score.
+
+25
+00:01:38,240 --> 00:01:42,400
+For example, say you needed to predict if a patient is sick or healthy,
+
+26
+00:01:42,400 --> 00:01:46,720
+and all you have are their height, weight, and body temperature.
+
+27
+00:01:46,720 --> 00:01:53,240
+The classifier would receive this data about the patient, process it, and fire out a confidence score.
+
+28
+00:01:53,240 --> 00:01:59,600
+A high score would mean a high confidence that the patient is sick, and a low score would suggest that they are healthy.
+
+29
+00:02:01,900 --> 00:02:05,960
+Neural nets are used for classification tasks where an object can fall
+
+30
+00:02:05,960 --> 00:02:09,080
+into one of at least two different categories.
+
+31
+00:02:09,080 --> 00:02:11,820
+Unlike other networks like a social network,
+
+32
+00:02:11,820 --> 00:02:15,120
+a neural network is highly structured and comes in layers.
+
+33
+00:02:15,120 --> 00:02:17,300
+The first layer is the input layer,
+
+34
+00:02:17,300 --> 00:02:19,320
+the final layer is the output layer,
+
+35
+00:02:19,320 --> 00:02:23,040
+and all layers in between are referred to as hidden layers.
+
+36
+00:02:23,040 --> 00:02:28,560
+A neural net can be viewed as the result of spinning classifiers together in a layered web.
+
+37
+00:02:28,560 --> 00:02:33,920
+This is because each node in the hidden and output layers has its own classifier.
+
+38
+00:02:33,920 --> 00:02:35,760
+Take that node for example -
+
+39
+00:02:35,760 --> 00:02:39,440
+it gets its inputs from the input layer, and activates.
+
+40
+00:02:39,440 --> 00:02:45,040
+Its score is then passed on as input to the next hidden layer for further activation.
+
+41
+00:02:45,040 --> 00:02:45,940
+So,
+
+42
+00:02:45,940 --> 00:02:50,100
+let’s see how this plays out end to end across the entire network.
+
+43
+00:02:50,100 --> 00:02:53,020
+A set of inputs is passed to the first hidden layer,
+
+44
+00:02:53,020 --> 00:02:56,720
+the activations from that layer are passed to the next layer and so on,
+
+45
+00:02:56,720 --> 00:02:58,960
+until you reach the output layer,
+
+46
+00:02:58,960 --> 00:03:04,480
+where the results of the classification are determined by the scores at each node.
+
+47
+00:03:04,480 --> 00:03:07,120
+This happens for each set of inputs.
+
+48
+00:03:07,120 --> 00:03:09,920
+Here's another one...
+
+49
+00:03:09,920 --> 00:03:11,460
+like so.
+
+50
+00:03:11,460 --> 00:03:16,500
+This series of events starting from the input where each activation is sent to the next layer,
+
+51
+00:03:16,500 --> 00:03:18,840
+and then the next, all the way to the output,
+
+52
+00:03:18,840 --> 00:03:22,560
+is known as forward propagation, or forward prop.
+
+53
+00:03:22,560 --> 00:03:26,760
+Forward prop is a neural net's way of classifying a set of inputs.
+
+54
+00:03:27,360 --> 00:03:29,960
+Have you wanted to learn more about neural nets?
+
+55
+00:03:29,960 --> 00:03:33,000
+Please comment and let me know your thoughts?
+
+56
+00:03:35,060 --> 00:03:41,860
+The first neural nets were born out of the need to address the inaccuracy of an early classifier, the perceptron.
+
+57
+00:03:41,860 --> 00:03:45,260
+It was shown that by using a layered web of perceptrons,
+
+58
+00:03:45,260 --> 00:03:48,340
+the accuracy of predictions could be improved.
+
+59
+00:03:48,340 --> 00:03:54,380
+As a result, this new breed of neural nets was called a Multi-Layer Perceptron or MLP.
+
+60
+00:03:54,380 --> 00:03:59,480
+Since then, the nodes inside neural nets have replaced perceptrons with more powerful classifiers,
+
+61
+00:03:59,480 --> 00:04:01,240
+but the name MLP has stuck.
+
+62
+00:04:05,100 --> 00:04:07,260
+Here's forward prop again.
+
+63
+00:04:07,260 --> 00:04:11,660
+Each node has the same classifier, and none of them fire randomly;
+
+64
+00:04:11,660 --> 00:04:15,160
+if you repeat an input, you get the same output.
+
+65
+00:04:15,160 --> 00:04:19,060
+So if every node in the hidden layer received the same input,
+
+66
+00:04:19,060 --> 00:04:22,160
+why didn’t they all fire out the same value?
+
+67
+00:04:22,160 --> 00:04:27,680
+The reason is that each set of inputs is modified by unique weights and biases.
+
+68
+00:04:27,680 --> 00:04:29,840
+For example, for that node,
+
+69
+00:04:29,840 --> 00:04:32,800
+the first input is
+modified by a weight of 10,
+
+70
+00:04:32,800 --> 00:04:38,240
+the second by 5, the third by 6 and then a bias of 9 is added on top.
+
+71
+00:04:38,240 --> 00:04:42,620
+Each edge has a unique weight, and each node has a unique bias.
+
+72
+00:04:42,620 --> 00:04:46,760
+This means that the combination used for each activation is also unique,
+
+73
+00:04:46,760 --> 00:04:48,980
+which explains why the nodes fire differently.
+
+74
+00:04:50,780 --> 00:04:56,540
+You may have guessed that the prediction accuracy of a neural net depends on its weights and biases.
+
+75
+00:04:56,540 --> 00:04:58,700
+We want that accuracy to be high,
+
+76
+00:04:58,700 --> 00:05:03,480
+meaning we want the neural net to predict a value that is as close to the actual output as possible,
+
+77
+00:05:03,480 --> 00:05:05,460
+every single time.
+
+78
+00:05:05,460 --> 00:05:09,240
+The process of improving a neural net’s accuracy is called training,
+
+79
+00:05:09,240 --> 00:05:12,440
+just like with other machine learning methods.
+
+80
+00:05:12,440 --> 00:05:15,320
+Here's that forward prop again -
+
+81
+00:05:15,320 --> 00:05:21,220
+to train the net, the output from forward prop is compared to the output that is known to be correct,
+
+82
+00:05:21,220 --> 00:05:24,300
+and the cost is the difference of the two.
+
+83
+00:05:24,300 --> 00:05:31,660
+The point of training is to make that cost as small as possible, across millions of training examples.
+
+84
+00:05:31,660 --> 00:05:35,660
+To do this, the net tweaks the weights and biases step by step
+
+85
+00:05:35,660 --> 00:05:39,580
+until the prediction closely matches the correct output.
+
+86
+00:05:39,580 --> 00:05:45,580
+Once trained well, a neural net has the potential to make accurate predictions each time.
+
+87
+00:05:45,580 --> 00:05:47,820
+This is a neural net in a nutshell.
+
+88
+00:05:50,120 --> 00:05:52,180
+At this point you might be wondering;
+
+89
+00:05:52,180 --> 00:05:56,820
+why create and train a web of classifiers for a task like classification,
+
+90
+00:05:56,820 --> 00:06:00,580
+when an individual classifier can do the job quite well?
+
+91
+00:06:00,580 --> 00:06:05,940
+The answer involves the problem of pattern complexity, which we will see in the next video.
+

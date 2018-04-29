@@ -1,0 +1,299 @@
+1
+00:00:01,329 --> 00:00:08,329
+Hello, I will explain how SVM algorithm works.
+This video will explain the support vector
+
+2
+00:00:10,099 --> 00:00:17,099
+machine for linearly separable binary sets
+Suppose we have this two features, x1 and
+
+3
+00:00:17,680 --> 00:00:24,680
+x2 here and we want to classify all this elements
+You can see that we have the class square
+
+4
+00:00:26,929 --> 00:00:33,929
+and the class rectangle
+So the goal of the SVM is to design a hyperplane,
+
+5
+00:00:33,979 --> 00:00:40,610
+here we define this green line as the hyperplane,
+that classifies all the training vectors in
+
+6
+00:00:40,610 --> 00:00:47,570
+two classes
+Here we show two different hyperplanes which
+
+7
+00:00:47,570 --> 00:00:53,570
+can classify correctly all the instances in
+this feature set
+
+8
+00:00:53,570 --> 00:01:00,570
+But the best choice will be the hyperplane
+that leaves the maximum margin from both classes
+
+9
+00:01:01,070 --> 00:01:08,070
+The margin is this distance between the hyperplane
+and the closest elements from this hyperplane
+
+10
+00:01:10,760 --> 00:01:17,750
+We have the case of the red hyperplane we
+have this distance, so this is the margin,
+
+11
+00:01:17,750 --> 00:01:23,010
+which we represent by z1
+And in the case of the green hyperplane we
+
+12
+00:01:23,010 --> 00:01:30,010
+have the margin that we call z2
+We can clearly see that the value of z2 is
+
+13
+00:01:30,750 --> 00:01:36,360
+greater than z1
+So the margin is higher in the case of the
+
+14
+00:01:36,360 --> 00:01:43,360
+green hyperplane, so in this case the best
+choice will be the green hyperplane
+
+15
+00:01:44,120 --> 00:01:51,120
+Suppose we have this hyperplane, this hyperplane
+is defined by one equation, we can state this
+
+16
+00:01:52,680 --> 00:01:59,680
+equation as this one
+We have a vector of weights plus omega 0 and
+
+17
+00:02:02,520 --> 00:02:09,520
+this equation will deliver values greater
+than 1 for all the input vectors which belongs
+
+18
+00:02:10,530 --> 00:02:17,530
+to the class 1, in this case the circles
+And also, we scale this hyperplane so that
+
+19
+00:02:18,420 --> 00:02:25,420
+it will deliver values smaller than -1 for
+all values which belongs to class number 2,
+
+20
+00:02:26,950 --> 00:02:31,980
+the rectangles
+We can say that this distance to the closest
+
+21
+00:02:31,980 --> 00:02:38,410
+elements will be at least 1, the modulus is
+1
+
+22
+00:02:38,410 --> 00:02:44,349
+From the geometry we know that the distance
+between a point and a hyperplane is computed
+
+23
+00:02:44,349 --> 00:02:51,349
+by this equation
+So the total margin which is composed by this
+
+24
+00:02:52,099 --> 00:02:59,099
+distance will be computed by this equation
+And the aim is that minimizing this term will
+
+25
+00:03:02,200 --> 00:03:09,200
+maximize the separability
+When we minimize this weight vector we will
+
+26
+00:03:09,790 --> 00:03:16,790
+have the biggest margin here that will split
+this two classes
+
+27
+00:03:18,280 --> 00:03:25,280
+To minimize this weight vector is a nonlinear
+optimization task, which can be solved by
+
+28
+00:03:25,870 --> 00:03:31,060
+this conditions (KKT), which uses Langrange
+multipliers
+
+29
+00:03:31,060 --> 00:03:38,060
+The main equations state that the value of
+omega will be the solution of this sum here
+
+30
+00:03:38,900 --> 00:03:45,849
+And we also have this other rule. So when
+we solve these equations, trying to minimize
+
+31
+00:03:45,849 --> 00:03:52,849
+this omega vector, we will maximize the margin
+between the two classes which will maximize
+
+32
+00:03:54,379 --> 00:04:01,379
+the separability the two classes
+Here we show a simple example
+
+33
+00:04:02,769 --> 00:04:08,819
+Suppose we have these 2 features, x1 and x2,
+and we have these 3 values
+
+34
+00:04:08,819 --> 00:04:15,819
+We want to design, or to find the best hyperplane
+that will divide this 2 classes
+
+35
+00:04:17,150 --> 00:04:24,150
+So we know that we can see clearly from this
+graph that the best division line will be
+
+36
+00:04:26,050 --> 00:04:30,990
+a parallel line to the line that connects
+these 2 values here
+
+37
+00:04:30,990 --> 00:04:37,990
+So we can define this weight vector, which
+is this point minus this other point. So we
+
+38
+00:04:39,439 --> 00:04:44,629
+have the constant a and 2 times this constant
+a
+
+39
+00:04:44,629 --> 00:04:51,629
+Now we can solve this weight vector and create
+the hyperplane equations considering this
+
+40
+00:04:54,499 --> 00:04:59,539
+weight vector
+We must discover the values of this a here
+
+41
+00:04:59,539 --> 00:05:06,539
+Since we have this weight vector omega here,
+we can substitute the values of this point
+
+42
+00:05:07,779 --> 00:05:13,639
+and also using this point we can substitute
+these 2 values here
+
+43
+00:05:13,639 --> 00:05:20,639
+When we place the equation g using the input
+vector (1,1) we know that we have the value
+
+44
+00:05:23,469 --> 00:05:30,469
+-1 because this belongs to the class circle
+So we will have this value here, when we use
+
+45
+00:05:32,499 --> 00:05:39,499
+the second point, we apply the function and
+we know that it will deliver the value 1
+
+46
+00:05:39,719 --> 00:05:46,719
+So we substitute here in the equation also
+Well, given 2 equations we can isolate the
+
+47
+00:05:47,819 --> 00:05:54,819
+value of omega 0 in the second equation and
+we will have omega 0 equal to 1 minus 8 times
+
+48
+00:05:55,300 --> 00:05:59,659
+a
+So, using this value, we put the omega 0 in
+
+49
+00:05:59,659 --> 00:06:06,659
+the first equation and we will reach the value
+of a, which is 2 divided by 5
+
+50
+00:06:06,899 --> 00:06:13,899
+Now we discover the value of a and now we
+substitute the first equation and also discover
+
+51
+00:06:14,129 --> 00:06:19,909
+the value of omega 0
+So by dividing here we will come to the conclusion
+
+52
+00:06:19,909 --> 00:06:26,909
+that omega 0 is minus 11 divided by 5 and
+since we know that the weight vector is a
+
+53
+00:06:28,059 --> 00:06:35,059
+and 2 a we can substitute the value of a here
+and we will deliver these values of the weight
+
+54
+00:06:37,879 --> 00:06:44,149
+vector
+So in this case, these are called the support
+
+55
+00:06:44,149 --> 00:06:51,149
+vectors because they compose the omega value
+2 divided by 5 and 4 divided by 5
+
+56
+00:06:51,589 --> 00:06:58,589
+And we substitute here the values of omega
+(2 divided by 5 and 4 divided by 5) and also
+
+57
+00:06:59,740 --> 00:07:06,740
+the omega 0 value we will deliver the final
+equation which defines this green hyperplane
+
+58
+00:07:09,729 --> 00:07:16,729
+which is x1 plus 2 times x2 minus 5.5
+And this hyperplane classifies the elements
+
+59
+00:07:20,289 --> 00:07:27,289
+using support vector machines
+These are some references that we have used
+
+60
+00:07:28,179 --> 00:07:31,990
+So this is how SVM algorithm works
+
