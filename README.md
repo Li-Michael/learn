@@ -1,1 +1,1 @@
-learn python / algorithm / DNA sequencing
+learn python / statistics / algorithm / DNA sequencing
